@@ -1,31 +1,37 @@
 # Flutter God Tier Boilerplate 🚀
 
-Ce dépôt sert de **"Template Repository"** (Boilerplate) pour démarrer instantanément n'importe quelle nouvelle application Flutter. Il intègre dès son clonage :
+This repository serves as a **"Template Repository"** (Boilerplate) to instantly kickstart any new Flutter application. Upon cloning, it includes:
 
-1. Une base de code préparée (Clean Architecture / Feature-Driven)
-2. Une suite de dépendances incontournables (Riverpod, GoRouter, Dio, GetIt...)
-3. **Le cerveau IA du projet** (le dossier `.agents/skills`) permettant aux assistants (comme Gemini, Cursor ou Claude) de comprendre l'exigence de qualité (Design System, Tests Auto, A11y).
+1. A prepared codebase (Clean Architecture / Feature-Driven)
+2. A suite of essential dependencies (Riverpod, GoRouter, Dio, GetIt...)
+3. **The project's AI brain** (the `.agents/skills` and `.agents/rules` folders) allowing assistants (like Gemini, Cursor, or Claude) to understand the quality requirements (Design System, Automated Tests, A11y, Clean Architecture).
 
-## 🛠️ Comment l'utiliser pour ton nouveau projet ?
+## 🛠️ How to use it for your new project?
 
-1. Sur GitHub, clique sur le bouton vert **"Use this template"** (en haut à droite) et nomme ton nouveau dépôt.
-2. Clone ton nouveau dépôt : `git clone [URL]`
-3. Renomme automatiquement toutes les occurences de `flutter_app_boilerplate` vers le vrai nom de ton app en lançant _depuis la racine du projet_ :
+1. On GitHub, click the green **"Use this template"** button (top right) and name your new repository.
+2. Clone your new repository: `git clone [URL]`
+3. Automatically rename all occurrences of `flutter_app_boilerplate` to your app's actual name by running this _from the root of the project_:
    ```bash
-   dart run scripts/rename_project.dart ton_vrai_nom_de_projet
+   dart run scripts/rename_project.dart your_actual_project_name
    ```
-4. Lance `flutter pub get`
-5. (Optionnel) Supprime le dossier `scripts/` une fois l'opération terminée.
-6. C'est parti ! 🚀
+4. Run `flutter pub get`
+5. (Optional) Delete the `scripts/` folder once the operation is completed.
+6. You're ready to go! 🚀
 
 ---
 
-## 📂 Architecture embarquée
+## 📂 Embedded Architecture
 
-- `lib/core/` : Composants vitaux (injection de dépendances, dio client, loggers, env...).
-- `lib/design_system/` : Point de départ pour ton framework de variables UI (`ThemeExtensions`, `Spacing`, Palette, Textes).
-- `lib/features/` : Tes futurs domaines, cloisonnés et prêts pour Clean Architecture.
-- `.agents/skills/` : Toutes les directives pour que l'Outil IA respecte t(es) exigence(s) :
+- `lib/core/`: Vital components (dependency injection, dio client, loggers, env...).
+- `lib/design_system/`: Starting point for your UI variable framework (`ThemeExtensions`, `Spacing`, Palette, Typography).
+- `lib/features/`: Your future domains, isolated and ready for Clean Architecture.
+- `.agents/rules/`: Foundation rules and best practices:
+  - `100-flutter-best-practices.md`
+  - `200-clean-architecture-boundaries.md`
+  - `300-state-management-discipline.md`
+  - `400-error-handling-and-logging.md`
+  - `500-ui-and-accessibility.md`
+- `.agents/skills/`: All the guidelines for your AI Assistant to respect your requirements per subject:
   - `flutter_clean_architecture_scaffolder`
   - `flutter_design_system_engine`
   - `flutter_test_driven_generator`
@@ -34,9 +40,9 @@ Ce dépôt sert de **"Template Repository"** (Boilerplate) pour démarrer instan
   - `flutter_performance_auditor`
   - `flutter_a11y_enforcer`
 
-## 📦 Packages par défaut
+## 📦 Default Packages
 
-- **State Management & DI / Routing** : `flutter_riverpod`, `riverpod_annotation`, `get_it`, `go_router`
-- **Networking & Erreurs** : `dio`, `dartz`
-- **UI & Outils** : `shared_preferences`, `google_fonts`, `flutter_svg`
-- **Générateurs CI/CD** : `build_runner`, `custom_lint`, `riverpod_lint`
+- **State Management & DI / Routing**: `flutter_riverpod`, `riverpod_annotation`, `get_it`, `go_router`
+- **Networking & Errors**: `dio`, `fpdart` (or `dartz`)
+- **UI & Tools**: `shared_preferences`, `google_fonts`, `flutter_svg`
+- **CI/CD Generators**: `build_runner`, `custom_lint`, `riverpod_lint`
