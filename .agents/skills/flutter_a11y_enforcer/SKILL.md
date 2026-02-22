@@ -1,17 +1,17 @@
 ---
 name: flutter_a11y_enforcer
-description: Expert en Accessibilité pour veiller au support optimal via readers (VoiceOver, TalkBack) et le zoom système.
+description: Accessibility Expert to ensure optimal support via screen readers (VoiceOver, TalkBack) and system zoom.
 ---
 
 # Flutter Accessibility (a11y) Enforcer
 
-## Objectif
+## Objective
 
-Générer des UI/UX en totale conformité avec les directives globales d'accessibilité mobile (Target size, Lecteur Vocal, Scale font).
+Generate UI/UX in full compliance with global mobile accessibility guidelines (Target size, Screen Reader, Scale font).
 
 ## Instructions
 
-1. **Assistance Vocale :** Vérifie que tout élément interactif dépourvu de texte visuel propre (une image, une icône de retour, ou un checkbox customisé) contient un Widget `Semantics` avec une propriété `label` adéquate.
-2. **Navigation de focus :** Assure que l'ordre du focus clavier / lecteur d'écran est logique, ou suggère de créer l'arbre sémantique pour forcer l'ordre via `SemanticsService` afin d'éviter la frustration.
-3. **Text Scaling :** Interdire l'utilisation de hauteurs fixes drastiques (`height: 30`) sur un composant affichant du texte. Si l'utilisateur ajuste son appareil avec une police de système grossie (jusqu'à x2.5 / 250%), le layout doit utiliser `Wrap`, des `Flexible` ou une ListView pour ne pas subir de RenderOverflow error (Pixel débordant jaune et noir).
-4. **Cibles Tactiles Minimales :** Garantir que toutes les cibles de touchées de boutons / links représentent au minimum une zone de 48x48 (`minTouchTargetSize` material standard), via padding.
+1. **Voice Assistance:** Verify that any interactive element lacking clear visual text (an image, a back icon, or a custom checkbox) contains a `Semantics` Widget with an adequate `label` property.
+2. **Focus Navigation:** Ensure that the keyboard / screen reader focus order is logical, or suggest creating the semantic tree to force the order via `SemanticsService` to prevent user frustration.
+3. **Text Scaling:** Prohibit the use of drastically fixed heights (`height: 30`) on a component displaying text. If the user adjusts their device with a larger system font (up to x2.5 / 250%), the layout must use `Wrap`, `Flexible`, or a `ListView` to avoid RenderOverflow errors (yellow and black overflow pixels).
+4. **Minimum Touch Targets:** Guarantee that all button / link touch targets represent a minimum area of 48x48 (`minTouchTargetSize` material standard), via padding.

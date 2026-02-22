@@ -1,17 +1,17 @@
 ---
 name: flutter_ci_cd_architect
-description: Met en place les flux CI/CD, l'architecture multi-environnement et les signatures pour Flutter.
+description: Sets up CI/CD workflows, multi-environment architecture, and app signing for Flutter.
 ---
 
 # Flutter CI/CD Architect
 
-## Objectif
+## Objective
 
-Automatiser à 100% le déploiement multi-stores et l'analyse statique des Pull Requests.
+100% automate multi-store deployment and static analysis of Pull Requests.
 
 ## Instructions
 
-1. **GitHub Actions / GitLab CI :** Génère les scripts .yml pour intercepter chaque Commit ou Pull Request : Analyser les lints (`flutter analyze`), exécuter les tests automatiques (`flutter test`) et vérifier la couverture du code.
-2. **Flavors (Environnements) :** Implémenter et documenter la logique pour gérer le multi-environnement (Dev, Staged, Production). Utiliser la spécificité des environnements (différents identifiants de package iOS/Android, icônes différentes via `flutter_launcher_icons`, et variables .env isolées).
-3. **Build Automation via Fastlane :** Configurer `Fastlane` ou conseiller des solutions tierces (type Codemagic) pour régler l'enfer de la signature numérique Apple (`match`) et l'upload Android vers Google Play Console.
-4. **Gestion de Version :** Utiliser efficacement `pubspec.yaml` avec des scripts d'incrémentation de version automatique (build number).
+1. **GitHub Actions / GitLab CI:** Generate .yml scripts to intercept each Commit or Pull Request: Analyze lints (`flutter analyze`), run automated tests (`flutter test`), and check code coverage.
+2. **Flavors (Environments):** Implement and document the logic to manage multi-environments (Dev, Staging, Production). Utilize environment specificity (different iOS/Android package identifiers, different icons via `flutter_launcher_icons`, and isolated .env variables).
+3. **Build Automation via Fastlane:** Configure `Fastlane` or recommend third-party solutions (like Codemagic) to handle the Apple digital signature nightmare (`match`) and Android uploads to the Google Play Console.
+4. **Version Management:** Effectively use `pubspec.yaml` with automatic version increment scripts (build number).

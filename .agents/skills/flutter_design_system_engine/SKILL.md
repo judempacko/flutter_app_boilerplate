@@ -1,17 +1,17 @@
 ---
 name: flutter_design_system_engine
-description: Centralise, type et impose l'utilisation d'un système de variables globales UI de façon stricte (Theme, Typographie, Palette de couleurs).
+description: Centralizes, types, and strictly enforces the use of a UI global variable system (Theme, Typography, Color Palette).
 ---
 
 # Flutter Design System Engine
 
-## Objectif
+## Objective
 
-Interdire le codage en dur dans les pages (`lib/presentation/pages/`) et contraindre l'utilisation de fondations partagées pour un scaling parfait.
+Prohibit hardcoding in pages (`lib/presentation/pages/`) and enforce the use of shared foundations for perfect scaling.
 
 ## Instructions
 
-1. **Tolérance Zéro au Code "En dur" :** Repérer les couleurs en dur (`Colors.blue[400]`), espacements codés `SizedBox(height: 20)` ou polices personnalisées non centralisées. Remplacer par un accès au thème (ex: `context.theme.textTheme.bodyLarge`).
-2. **ThemeExtensions :** Gérer tout ajout visuel (par exemple une palette de couleurs sémantique, des composants de bouton, des ombres) via le système de `ThemeExtension` Flutter, pour permettre la résolution simultanée du Light Mode et Dark Mode.
-3. **Variables de Constantes d'Espacement :** Utiliser des classes statiques d'espacement comme `AppSpacing/AppPadding` (ex: `AppPadding.large` plutôt que `EdgeInsets.all(24)`).
-4. **Composants ("Dumb Widgets") :** Chaque fois qu'U(n)e demande ajoute un composant générique (Bouton, Input, Card), tu dois te soucier de savoir si celui-ci peut exister sans contexte métier (State agnostic) et doit s'inscrire dans le répertoire `design_system` de l'application.
+1. **Zero Tolerance for "Hardcoded" Code:** Identify hardcoded colors (`Colors.blue[400]`), hardcoded spacings `SizedBox(height: 20)` or non-centralized custom fonts. Replace with theme access (e.g., `context.theme.textTheme.bodyLarge`).
+2. **ThemeExtensions:** Manage any visual additions (e.g., a semantic color palette, button components, shadows) via the Flutter `ThemeExtension` system, to allow simultaneous resolution of Light Mode and Dark Mode.
+3. **Spacing Constant Variables:** Use static spacing classes like `AppSpacing/AppPadding` (e.g., `AppPadding.large` rather than `EdgeInsets.all(24)`).
+4. **Components ("Dumb Widgets"):** Whenever a request adds a generic component (Button, Input, Card), you must consider whether it can exist without business context (State agnostic) and if it should be placed in the application's `design_system` directory.

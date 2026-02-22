@@ -1,31 +1,31 @@
 ---
 name: flutter_clean_architecture_scaffolder
-description: Enforce et génère l'arborescence et le boilerplate CLeap Architecture pour un projet Flutter.
+description: Enforces and generates the Clean Architecture tree and boilerplate for a Flutter project.
 ---
 
 # Flutter Clean Architecture Scaffolder
 
-## Objectif
+## Objective
 
-Créer et organiser les fichiers d'une nouvelle fonctionnalité (feature) en respectant strictement les principes de la Clean Architecture.
+Create and organize the files of a new feature while strictly adhering to Clean Architecture principles.
 
 ## Instructions
 
-1. Lorsqu'on te demande de créer une nouvelle fonctionnalité (ex: `login`), tu DOIS générer l'arborescence suivante dans `lib/features/[feature_name]/` :
+1. When asked to create a new feature (e.g., `login`), you MUST generate the following tree structure in `lib/features/[feature_name]/`:
    - `domain/`
      - `entities/`
      - `repositories/`
      - `usecases/`
    - `data/`
      - `models/`
-     - `repositories/` (implémentation)
+     - `repositories/` (implementation)
      - `datasources/`
    - `presentation/`
      - `pages/`
      - `widgets/`
-     - `bloc/` ou `providers/`
-2. **Implémentation :**
-   - Commence TOUJOURS par le `domain` (contrats et cas d'usage). Les entités ne doivent dépendre d'aucun package Flutter (Dart pur).
-   - Ensuite le `data` (API, local storage) qui implémente le contrat du domaine.
-   - Enfin, la `presentation` (UI) qui interagit avec le domaine via l'injection de dépendance (ex: Riverpod, get_it).
-3. **Gestion des erreurs :** Toujours inclure la gestion des erreurs avec des types `Either` ou équivalent typé (ex: `fpdart`, `dartz` ou des Sealed Classes `Result`).
+     - `bloc/` or `providers/`
+2. **Implementation:**
+   - ALWAYS start with the `domain` (contracts and use cases). Entities must not depend on any Flutter package (pure Dart).
+   - Then the `data` (API, local storage) which implements the domain contract.
+   - Finally, the `presentation` (UI) which interacts with the domain via dependency injection (e.g., Riverpod, get_it).
+3. **Error Handling:** Always include error handling with `Either` types or equivalent typed results (e.g., `fpdart`, `dartz` or Sealed Classes `Result`).
